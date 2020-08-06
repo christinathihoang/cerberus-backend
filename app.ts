@@ -1,12 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import Knex from 'knex';
+import cors from 'cors';
 import sisterController from './controllers/sisters';
 
 dotenv.config();
 
 const app = express();
-import Knex from 'knex';
-
+app.use(express.json())
+app.use(cors());
 const config = require('./knexfile')["development"];
 export const knex = Knex(config);
 
