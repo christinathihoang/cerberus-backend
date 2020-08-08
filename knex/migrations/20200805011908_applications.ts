@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('nickname').notNullable();
     table.string('meaning').notNullable();
     table.string('pronunciation').notNullable();
-    table.boolean('approved').notNullable();
+    table.string('status').notNullable();
     table.boolean('accepted').notNullable();
   })
 }
